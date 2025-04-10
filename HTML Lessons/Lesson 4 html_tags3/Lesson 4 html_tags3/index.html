@@ -4,7 +4,7 @@
 <html lang="ru">
     <!--Контейнер head, испльзуется для заголовка и других важных, но невидимых на странице данных-->
     <head>
-        <title>HTML Tags, Part 2</title>
+        <title>HTML Tags, Part 3</title>
         <!--Указание кодировки страницы (? это прям обязательно? сомнительно, но окэй)
        "Warning: Do not use this value, as it is obsolete. Use the charset attribute on the <meta> element."
        Это делается с помощью <meta charset="UTF-8">, но для следования за гайдом, делаем как он сказал--> 
@@ -12,6 +12,85 @@
     </head>
     <!--"Тело" страницы, видимый контент на странице-->
     <body>
+      <!--Аттрибут "action" обязательный, и оставлять его пустым - ошибка, аттрибут "method" имеет два значения - 
+      "get" (данные в адресной строке) и "post" (данные пердаются через браузер)
+      аттрибут "enctype" ставит тип данных для передачи-->
+      <form action="#" method="post" enctype="multipart/form-data"></form>
+
+      <!--Аттрибуты:
+      type - тип данных, по умолчанию "text"
+      name - имя поля
+      value - предзаписанные в поле данные, которые вставляются в поле при загрузке страницы
+      placeholder - подпись поля, применим к input с типом text, или к элементу textarea
+      disabled - блокирует действия с полем
+      tabindex - определяет порядок перехода между полями при нажатии кнопки tab-->
+      <div>
+        <input disabled placeholder="Подпись поля" type="text" name="userpass" value="">
+      </div>
+      <!--Тип "password" используются для ввода паролей, все символы будут точками-->
+      <div>
+        <input type="password" name="userpass" value="">
+      </div>
+
+      <!--тип "radio" - это тип выбора с точкой, в котором выбирается один вариант, они группируются по аттрибуту "name"
+      для типа radio значение tabindex должно быть одинаковое -->
+      <div>
+        <p><input checked type="radio" name="beer" id="lager">Светлое пиво</p>
+        <p><input type="radio" name="beer" id="dark">Темное пиво</p>
+      </div>
+      <br>
+      <div>
+        <p><input type="radio" name="beer2" id="lager">Светлое пиво</p>
+        <p><input checked type="radio" name="beer2" id="dark">Темное пиво</p>
+      </div>
+      <br>
+      <!-- тип "checkbox" - это галочка, тут всё понятнол
+       Важно - у типа "name" должны быть разные значения-->
+      <div>
+        <p><input type="checkbox" name="car" value="yes">Наличие авто</p>
+        <p><input checked type="checkbox" name="car2" value="yes">Наличие авто 2</p>
+        <p><input type="checkbox" name="car3" value="yes">Наличие авто 3</p>
+        <p><input checked type="checkbox" name="car4" value="yes">Наличие авто 4</p>
+      </div>
+      <br>
+      <!--тип "file" используется для загрузки файлов. Очевидно, да?
+      Важно: у элемента form должны быть правильно указаны аттрибуты method и enctype, 
+      иначе с передачей файлов могут быть проблемы-->
+      <div>
+        <p><input type="file" name="photo"></p> 
+      </div>
+      <!--Важно: теги name не должны повторяться,
+      иначе браузер не поймет, что есть что
+      исключение - input типа radio, они объединяются
+      по одинаковому аттрибуту name-->
+      <br>
+      <!--Текстовое поле. Всё понятно.-->
+      <div>
+        <textarea name="text"></textarea>
+      </div>
+      <br>
+      <!--Выпадающий список. Select - это "коробочка" списка, 
+      а option - это вариант выбора.
+      Важно: элемент option обязательно внутри элемента select
+      с помощью аттрибута multiple у элемента select можно указать на то,
+      что можно выбирать несколько значений-->
+      <div>
+        <select mult name="Color" >
+          <option value="red">Красный</option>
+          <!--аттрибут selected указывает на выбранный по умолчанию вариант-->
+          <option selected value="yellow">Желтый</option> 
+          <option value="blue">Синий</option>
+        </select>
+        <br>
+        <br>
+        <!--Кнопка. значения аттрибута type:
+        submit - отправляет всю информацию в формах на сервер
+        reset - ресет всех полей, возвращение их к значениям по умолчанию
+        -->
+        <button type="submit">Отправить</button>
+        <br><br>
+        <button type="reset">Сбросить</button>
+      </div>
 
     </body> 
 </html>
