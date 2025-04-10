@@ -12,85 +12,57 @@
     </head>
     <!--"Тело" страницы, видимый контент на странице-->
     <body>
-      <!--Аттрибут "action" обязательный, и оставлять его пустым - ошибка, аттрибут "method" имеет два значения - 
-      "get" (данные в адресной строке) и "post" (данные пердаются через браузер)
-      аттрибут "enctype" ставит тип данных для передачи-->
-      <form action="#" method="post" enctype="multipart/form-data"></form>
-
-      <!--Аттрибуты:
-      type - тип данных, по умолчанию "text"
-      name - имя поля
-      value - предзаписанные в поле данные, которые вставляются в поле при загрузке страницы
-      placeholder - подпись поля, применим к input с типом text, или к элементу textarea
-      disabled - блокирует действия с полем
-      tabindex - определяет порядок перехода между полями при нажатии кнопки tab-->
+     <form action="#" method="get">
       <div>
-        <input disabled placeholder="Подпись поля" type="text" name="userpass" value="">
+        <p>Имя</p>
+        <input tabindex="1" placeholder="Введите имя" type="text" name="username">
       </div>
-      <!--Тип "password" используются для ввода паролей, все символы будут точками-->
       <div>
-        <input type="password" name="userpass" value="">
+        <p>Пароль</p>
+        <input tabindex="2" placeholder="Введите пароль" type="password" name="password">
       </div>
-
-      <!--тип "radio" - это тип выбора с точкой, в котором выбирается один вариант, они группируются по аттрибуту "name"
-      для типа radio значение tabindex должно быть одинаковое -->
       <div>
-        <p><input checked type="radio" name="beer" id="lager">Светлое пиво</p>
-        <p><input type="radio" name="beer" id="dark">Темное пиво</p>
+        <p>Телефон</p>
+        <input tabindex="3" placeholder="Введите телефон" type="tel" name="phone">
       </div>
-      <br>
       <div>
-        <p><input type="radio" name="beer2" id="lager">Светлое пиво</p>
-        <p><input checked type="radio" name="beer2" id="dark">Темное пиво</p>
+        <p>Пол</p>
+        <p><input tabindex="4" checked type="radio" name="gender" id="male">Мужской</p>
+        <p><input tabindex="4" type="radio" name="gender" id="female">Женский</p>
       </div>
-      <br>
-      <!-- тип "checkbox" - это галочка, тут всё понятнол
-       Важно - у типа "name" должны быть разные значения-->
       <div>
-        <p><input type="checkbox" name="car" value="yes">Наличие авто</p>
-        <p><input checked type="checkbox" name="car2" value="yes">Наличие авто 2</p>
-        <p><input type="checkbox" name="car3" value="yes">Наличие авто 3</p>
-        <p><input checked type="checkbox" name="car4" value="yes">Наличие авто 4</p>
+        <p>Имущество</p>
+        <p><input tabindex="5" checked type="checkbox" name="property" id="Bike">Велик</p>
+        <p><input tabindex="6" type="checkbox" name="property" id="Car">Машина</p>
+        <p><input tabindex="7" type="checkbox" name="property" id="Flat">Квартира</p>
       </div>
-      <br>
-      <!--тип "file" используется для загрузки файлов. Очевидно, да?
-      Важно: у элемента form должны быть правильно указаны аттрибуты method и enctype, 
-      иначе с передачей файлов могут быть проблемы-->
       <div>
-        <p><input type="file" name="photo"></p> 
+        <p>Дополнительная информация</p>
+        <textarea tabindex="8" placeholder="Расскажите о себе..." name="addinfo"></textarea>
       </div>
-      <!--Важно: теги name не должны повторяться,
-      иначе браузер не поймет, что есть что
-      исключение - input типа radio, они объединяются
-      по одинаковому аттрибуту name-->
-      <br>
-      <!--Текстовое поле. Всё понятно.-->
       <div>
-        <textarea name="text"></textarea>
+        <p>Прикрепить фото</p>
+        <input tabindex="9" type="file" name="photo">
       </div>
-      <br>
-      <!--Выпадающий список. Select - это "коробочка" списка, 
-      а option - это вариант выбора.
-      Важно: элемент option обязательно внутри элемента select
-      с помощью аттрибута multiple у элемента select можно указать на то,
-      что можно выбирать несколько значений-->
       <div>
-        <select mult name="Color" >
-          <option value="red">Красный</option>
-          <!--аттрибут selected указывает на выбранный по умолчанию вариант-->
-          <option selected value="yellow">Желтый</option> 
-          <option value="blue">Синий</option>
+        <p>Любимый цвет</p>
+        <select tabindex="10" name="favcolor">
+          <option value="Red">Красный</option>
+          <option value="Green">Зеленый</option>
+          <option value="Blue">Синий</option>
         </select>
-        <br>
-        <br>
-        <!--Кнопка. значения аттрибута type:
-        submit - отправляет всю информацию в формах на сервер
-        reset - ресет всех полей, возвращение их к значениям по умолчанию
-        -->
-        <button type="submit">Отправить</button>
-        <br><br>
-        <button type="reset">Сбросить</button>
+      </div>
+      <div>
+        <p>Действия</p>
+        <span><button tabindex="11" type="submit">Отправить</button></span>
+        <span><button tabindex="12" type="reset">Сбросить</button></span>
       </div>
 
+
+
+
+
+
+     </form>
     </body> 
 </html>
