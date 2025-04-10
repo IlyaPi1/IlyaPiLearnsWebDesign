@@ -4,7 +4,7 @@
 <html lang="ru">
     <!--Контейнер head, испльзуется для заголовка и других важных, но невидимых на странице данных-->
     <head>
-        <title>HTML Tags, Part 1</title>
+        <title>HTML Tags, Part 2</title>
         <!--Указание кодировки страницы (? это прям обязательно? сомнительно, но окэй)
        "Warning: Do not use this value, as it is obsolete. Use the charset attribute on the <meta> element."
        Это делается с помощью <meta charset="UTF-8">, но для следования за гайдом, делаем как он сказал--> 
@@ -12,22 +12,58 @@
     </head>
     <!--"Тело" страницы, видимый контент на странице-->
     <body>
-      <header>
-       <nav>
-        Nav Content
-       </nav>
-      </header>
+      <h1>H1 Tag content. This tag can only be written ONCE per page.</h1>
+      <h2>H2 Tag content. This tag can be written on a page as many times as needed.</h2>
+      <h3>H3 Tag content. This tag can be written on a page as many times as needed.</h3>
+      <h4>H4 Tag content. This tag can be written on a page as many times as needed.</h4>
+      <h5>H5 Tag content. This tag can be written on a page as many times as needed.</h5>
+      <h6>H6 Tag content. This tag can be written on a page as many times as needed.</h6>
+
+      <!--Он к         этому      тегу span добавил текстовое выделение желтым, скорее всего с помощью background-color: yellow-->
+      <p>Paragraph 1. <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span><br>Molestias aliquam ea distinctio velit, dicta minus tempore. Ex maiores vitae deserunt in, veniam ducimus, est necessitatibus nisi, dolorem eum molestias libero.</p>
+      <p>Paragraph 2. <a href="https://google.com">Lorem ipsum dolor sit amet</a> consectetur adipisicing elit. Molestias aliquam ea distinctio velit, dicta minus tempore. Ex maiores vitae deserunt in, veniam ducimus, est necessitatibus nisi, dolorem eum molestias libero.</p>
+      <span>Span 1 contents.</span>
+      <span>Span 2 contents.</span>
+      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae eius suscipit consequuntur rem, temporibus, explicabo ea id expedita pariatur, officiis praesentium dolore eos voluptatibus laboriosam? Dolore minus recusandae ratione voluptate?</span>
+      <!--Аттрибут "target" указывает на то, каким образом открывать ссылку, например значение "_blank" открывает ссылку в новой вкладке, 
+      по умолчанию - открытие в той же вкладке (перенаправление, получается) -->
+      <a target="_blank" href="https://google.com">
+      "а" tag content (redirects to Google)  
+      </a> <!--Тег "a" строчный-->
+      <!--"src" - путь к картинке(как локальный, так и URL), "alt" - это текст, который отображается, если картинка не загрузилась
+      Аттрибут "alt" обязательный, но может быть пустым, тогда никакого текста не будет-->
+      <img src="img/Sonic_Colors_Gun.jpg" alt="Sonic with a gun, very scary">
+      
+      <!--Теги "ul" и "ol" - блочные, начинаются с новой строки-->
+      <ul>
+        <li>Unordered list contents</li>
+        <li>Unordered list contents</li>
+        <li>Unordered list contents</li>
+        <li>Unordered list contents</li>
+      </ul>
+
+      <ol>
+        <li>Ordered list contents</li>
+        <li>Ordered list contents</li>
+        <li>Ordered list contents</li>
+        <li>Ordered list contents</li>
+      </ol>
+
+      <!--Нельзя помещать блочные теги, по типу p,h1-h6, и div внутри строчных тегов типа span
+      Но можно помещать блочные теги внутрь блочных, типа div в ещё один div
+      
+      <span>
+        <p></p>
+        <h2></h2>     Вот так нельзя
+        <div></div>
+      </span>
+
       <div>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam dolore tempora deserunt doloremque nihil ducimus repudiandae temporibus voluptatem, modi voluptatum, at nam asperiores unde repellat alias nulla quasi id beatae.
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, nobis!
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet.
-      </div>
-      <footer>
-        Footer Content
-      </footer>
+        <div>
+          <span></span>     Вот так можно
+        </div>
+      </div>      
+      -->
+
     </body>
 </html>
