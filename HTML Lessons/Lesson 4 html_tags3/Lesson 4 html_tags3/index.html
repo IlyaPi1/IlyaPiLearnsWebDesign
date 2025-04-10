@@ -12,7 +12,8 @@
     </head>
     <!--"Тело" страницы, видимый контент на странице-->
     <body>
-     <form action="#" method="get">
+      <!--Для отправки файлов обязательно method="post" и enctype="multipart/form-data", что логично-->
+     <form action="#" method="post" enctype="multipart/form-data">
       <div>
         <p>Имя</p>
         <input tabindex="1" placeholder="Введите имя" type="text" name="username">
@@ -27,14 +28,26 @@
       </div>
       <div>
         <p>Пол</p>
-        <p><input tabindex="4" checked type="radio" name="gender" id="male">Мужской</p>
-        <p><input tabindex="4" type="radio" name="gender" id="female">Женский</p>
+        <!--Он вместо использования элемента p использует элемент div
+        Это делает поля до и после меньше, наверное так лучше? Это выбор каждого?
+        Причем он это делает максимально вырвиглазно, каждый div на новой строке
+        Я думаю, что если я сожму, то никто не обидится
+        И вместо id - value. VSCode сам подставил id, а я чота забыл-->
+        <div><input tabindex="4" checked type="radio" name="gender" value="male">Мужской</div>
+        <div><input tabindex="4" type="radio" name="gender" value="">Женский</div>
       </div>
       <div>
         <p>Имущество</p>
-        <p><input tabindex="5" checked type="checkbox" name="property" id="Bike">Велик</p>
-        <p><input tabindex="6" type="checkbox" name="property" id="Car">Машина</p>
-        <p><input tabindex="7" type="checkbox" name="property" id="Flat">Квартира</p>
+        <!--С этим полем то же самое - вместо "p" - "div"
+        Насчет последнего - тупо не заметил, что он у него на видео отмечен, как disabled
+        Очки не помогают, к сожалению :(
+        Ага, name - это имя элемента (типо его описание), а value - это его значение
+        И типо потому что название checkbox-а - это, например, "Велик",
+        то его name должен совпадать с этим - bike
+        A value она ставит "yes", потому что, ну типа, нажал галочку - сказал да-->
+        <div><input tabindex="5" checked type="checkbox" name="bike" value="yes">Велик</div>
+        <div><input tabindex="6" type="checkbox" name="car" value="yes">Машина</div>
+        <div><input disabled tabindex="7" type="checkbox" name="flat" value="yes">Квартира</div>
       </div>
       <div>
         <p>Дополнительная информация</p>
@@ -48,14 +61,15 @@
         <p>Любимый цвет</p>
         <select tabindex="10" name="favcolor">
           <option value="Red">Красный</option>
-          <option value="Green">Зеленый</option>
+          <option selected value="Green">Зеленый</option>
           <option value="Blue">Синий</option>
         </select>
       </div>
       <div>
         <p>Действия</p>
-        <span><button tabindex="11" type="submit">Отправить</button></span>
-        <span><button tabindex="12" type="reset">Сбросить</button></span>
+        <!--Оборачивать в span не нужно было-->
+        <button tabindex="11" type="submit">Отправить</button>
+        <button tabindex="12" type="reset">Сбросить</button>
       </div>
 
 
