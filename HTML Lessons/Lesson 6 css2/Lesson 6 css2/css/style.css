@@ -1,0 +1,71 @@
+/*Это - "обнуляющий" файл CSS, который сбрасывает все стили по умолчанию*/
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,*::before,*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,:active {outline: none;}
+a:focus,:active {outline: none;}
+
+nav,footer,header,aside {display: block;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,button,textarea {font-family: inherit;}
+
+input::-ms-clear{display: none;}
+button {cursor: pointer;}
+button::-moz-focus-inner {padding: 0; border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li {list-style: none;}
+img {vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: 400;}
+
+
+
+
+/*Значения ниже перезаписывают значения выше, т.е. если для одного и того же класса зададут
+два одинаковых параметра, но с разнымим значениями - применяется тот, который на нижних строках
+То же самое применимо для селекторов класса - если они ниже, применяются их значения (если параметры дублируются)*/
+/*Некоторые теги наследуются, а некоторые применяются только к родительскому тегу
+.block{
+    color: blue;
+    font-size: 15px;
+    border: 1px solid black;
+}*/
+
+/*.bigred{
+    font-size: 20px;
+    color: red;
+}*/
+
+/*Если необходимо, чтобы только элементы span внутри тега с классом bigred имели параметры - мы делаем запись типа
+.класс элемент {} и записываем туда изменения
+.bigred span {
+    color: green;
+}*/
+
+/*Этот тег для элемента span будет приоритетнее, потому что используется и HTML тег, и класс,
+вне зависимости от положения в файле*/
+/*span.bigred {
+    font-size: 30px;
+    color: green;
+}*/
