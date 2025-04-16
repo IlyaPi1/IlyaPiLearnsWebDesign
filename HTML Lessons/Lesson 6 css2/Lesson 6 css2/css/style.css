@@ -39,33 +39,58 @@ img {vertical-align: top;}
 
 h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: 400;}
 
+.arial {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
 
-
-
-/*Значения ниже перезаписывают значения выше, т.е. если для одного и того же класса зададут
-два одинаковых параметра, но с разнымим значениями - применяется тот, который на нижних строках
-То же самое применимо для селекторов класса - если они ниже, применяются их значения (если параметры дублируются)*/
-/*Некоторые теги наследуются, а некоторые применяются только к родительскому тегу
-.block{
-    color: blue;
-    font-size: 15px;
-    border: 1px solid black;
-}*/
-
-/*.bigred{
-    font-size: 20px;
-    color: red;
-}*/
-
-/*Если необходимо, чтобы только элементы span внутри тега с классом bigred имели параметры - мы делаем запись типа
-.класс элемент {} и записываем туда изменения
-.bigred span {
-    color: green;
-}*/
-
-/*Этот тег для элемента span будет приоритетнее, потому что используется и HTML тег, и класс,
-вне зависимости от положения в файле*/
-/*span.bigred {
+.fontsize30{
     font-size: 30px;
-    color: green;
-}*/
+}
+
+.italic{
+    font-style: italic;
+}
+
+.font700{
+    font-weight: 700;
+}
+
+.colorred{
+    color: #f00f00;
+}
+
+.textright{
+    text-align: right;
+}
+
+.decoration {
+    text-decoration: line-through;
+}
+
+.shadow {
+    text-shadow: 1px 1px 10px #000000;
+}
+
+.uppercase{
+    text-transform: capitalize;
+}
+
+.ident {
+    text-indent: 50px;
+}
+
+.lspace{
+    letter-spacing: 5px;
+}
+
+.wspace{
+    word-spacing: 5px;
+}
+
+.whitespace{
+    white-space: nowrap;
+}
+
+.lineheight{
+    line-height: 20px;
+}
